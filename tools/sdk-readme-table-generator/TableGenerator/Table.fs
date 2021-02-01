@@ -116,7 +116,7 @@ let windowsArm64Row branches =
         | NoVersion -> notAvailable
         | MajorMinor { Major = major; Minor = minor; Release = release; } when major <= 3 -> notAvailable
         | MajorMinor { Major = major; Minor = minor; Release = release; } when major = 5 -> String.Format(tableInstallerTemplate, branchNameShorten branch)
-        | _ -> String.Format(tableTemplate, branchNameShorten branch)
+        | _ -> String.Format(tableInstallerTemplate, branchNameShorten branch)
     formRow "**Windows arm64**" tableTemplateForThisArch branches
 
 let titleRow = formRow "Platform" (fun (b: Branch) -> b.DisplayName)
